@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platform & Demo | Project Atlas</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .platform-page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    .platform-hero {
+      padding: 65px 0;
+      max-width: 760px;
+    }
+
+    .platform-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    .platform-hero p,
+    .feature-copy p {
+      color: #64748b;
+      line-height: 1.8;
+    }
+
+    .eyebrow {
+      color: #3478b9;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .platform-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .platform-button {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 8px;
+      background: #2469a5;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .platform-button.secondary {
+      background: #edf3f8;
+      color: #244b6b;
+    }
+
+    .feature-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 45px;
+      align-items: center;
+      padding: 45px 0;
+      border-top: 1px solid #e5eaf0;
+    }
+
+    .feature-copy {
+      min-width: 0;
+    }
+
+    .feature-copy h2 {
+      font-size: 1.8rem;
+      margin: 10px 0;
+    }
+
+    .platform-screenshot {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 320px;
+      object-fit: contain;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f0f4f8;
+    }
+
+    .demo-guide {
+      margin-top: 55px;
+      padding: 35px;
+      background: #f5f8fb;
+      border-radius: 14px;
+    }
+
+    .demo-guide li {
+      margin: 14px 0;
+      line-height: 1.6;
+    }
+
+    .status-note {
+      margin-top: 30px;
+      padding: 22px;
+      border-left: 4px solid #3478b9;
+      background: #f5f8fb;
+      line-height: 1.7;
+    }
+
+    .platform-footer {
+      border-top: 1px solid #e5eaf0;
+      margin-top: 60px;
+      padding-top: 25px;
+      color: #64748b;
+    }
+
+    @media (max-width: 700px) {
+      .feature-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .platform-page {
+        padding-top: 35px;
+      }
+
+      .platform-screenshot {
+        height: auto;
+        max-height: 360px;
+      }
+    }
+
+    @media print {
+      nav, .platform-actions, .platform-footer, .no-print {
+        display: none !important;
+      }
+
+      body {
+        background: white !important;
+        color: #172b3d !important;
+      }
+
+      .platform-page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .feature-section, .demo-guide, .status-note {
+        break-inside: avoid;
+      }
+
+      a {
+        color: #172b3d;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">
+    <span class="logo-mark">A</span>
+    <span>PROJECT ATLAS</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="platform.html">Platform</a>
+    <a href="index.html#research">Research</a>
+    <a href="index.html#mission">Our Mission</a>
+    <a href="index.html#privacy">Privacy</a>
+  </nav>
+
+  <a href="index.html#contact" class="nav-button">Get in touch</a>
+</header>
+
+<main class="platform-page">
+
+  <section class="platform-hero">
+    <div class="eyebrow">The Platform</div>
+    <h1>Supporting learners through every stage of their education journey.</h1>
+    <p>
+      Project Atlas is developing a digital platform designed to help
+      displaced learners preserve educational records, build a portable
+      education history, and prepare for future academic and employment
+      opportunities.
+    </p>
+
+    <div class="platform-actions no-print">
+      <a href="https://project-atlas-demo.streamlit.app/" class="platform-button" target="_blank" rel="noopener noreferrer">Launch Interactive Demo</a>
+      <a href="#features" class="platform-button secondary">Explore the features</a>
+      <button class="platform-button secondary" onclick="window.print()">
+        Download demonstration PDF
+      </button>
+    </div>
+  </section>
+
+  <section id="features">
+
+    <div class="feature-section">
+      <div class="feature-copy">
+        <div class="eyebrow">01 / Academic Records</div>
+        <h2>Preserve important educational documents.</h2>
+        <p>
+          A central place for learners to organize academic records,
+          certificates, transcripts, and other educational documents
+          that may otherwise become difficult to access during displacement.
+        </p>
+      </div>
+      <img
+        src="images/academic-records.png"
+        alt="Academic records page"
+        class="platform-screenshot"
+      >
+    </div>
+
+    <div class="feature-section">
+      <div class="feature-copy">
+        <div class="eyebrow">02 / Education Profile</div>
+        <h2>Make educational histories easier to understand.</h2>
+        <p>
+          Structure a learner's education history across schools,
+          countries, grade levels, and academic years. The longer-term
+          vision includes helping learners and educators understand
+          educational transitions between different systems.
+        </p>
+      </div>
+      <img
+        src="images/education-profile.png"
+        alt="Education profile showing a learner's education history"
+        class="platform-screenshot"
+      >
+    </div>
+
+    <div class="feature-section">
+      <div class="feature-copy">
+        <div class="eyebrow">03 / Career Preparation</div>
+        <h2>Connect education histories with future opportunities.</h2>
+        <p>
+          Help learners translate their education and experience into
+          structured CVs, resumes, and employment-related materials.
+        </p>
+      </div>
+      <img
+        src="images/resume-cv.png"
+        alt="Resume and CV preparation page"
+        class="platform-screenshot"
+      >
+    </div>
+
+<div class="feature-section">
+  <div class="feature-copy">
+    <div class="eyebrow">04 / Resources & Opportunities</div>
+    <h2>Make the next steps easier to navigate.</h2>
+    <p>
+      A developing resource area intended to help learners navigate
+      education systems, identify opportunities, and access relevant
+      guidance.
+    </p>
+    <p><em>This section is currently in development.</em></p>
+  </div>
+
+  <img
+    src="images/homepage.png"
+    alt="Project Atlas platform home screen"
+    class="platform-screenshot"
+  />
+</div>
+
+  </section>
+
+  <section class="demo-guide">
+    <div class="eyebrow">Demonstration Guide</div>
+    <h2>Exploring the prototype</h2>
+    <p>
+      The demonstration is intended to illustrate how the platform's
+      core features connect throughout a learner's education journey.
+    </p>
+    <ol>
+      <li><strong>Academic Records:</strong> Explore how educational documents can be added and organized.</li>
+      <li><strong>Education Profile:</strong> Review how school history, grade levels, and academic progression are structured.</li>
+      <li><strong>Resume & CV:</strong> Explore how educational information can support career preparation.</li>
+      <li><strong>Resources:</strong> Review the developing guidance and opportunity section.</li>
+    </ol>
+    <p>
+      Use fictional information only when exploring demonstration
+      environments. Do not upload real personal, educational, or
+      identifying documents.
+    </p>
+  </section>
+
+  <section class="status-note">
+    <strong>Development status</strong>
+    <p>
+      Project Atlas is an early-stage product under active development.
+      The prototype demonstrates selected functions, while additional
+      capabilities, security controls, and safeguarding procedures
+      remain in development.
+    </p>
+  </section>
+
+  <footer class="platform-footer">
+    <p>Project Atlas · Education continuity across borders</p>
+    <p>Contact: CONTACT_EMAIL_HERE</p>
+    <a href="index.html">Return to homepage</a>
+  </footer>
+
+</main>
+
+</body>
+</html>
